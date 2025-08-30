@@ -8,35 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 195 16% 13%;
+    --foreground: 46 89% 77%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 195 24% 9%;
+    --card-foreground: 46 89% 77%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 195 24% 9%;
+    --popover-foreground: 46 89% 77%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 77 68% 77%;
+    --primary-foreground: 195 16% 13%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 195 20% 18%;
+    --secondary-foreground: 46 89% 77%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 195 20% 18%;
+    --muted-foreground: 195 8% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 77 68% 77%;
+    --accent-foreground: 195 16% 13%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 46 89% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 195 20% 18%;
+    --input: 195 20% 18%;
+    --ring: 77 68% 77%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --lime: 77 68% 77%;
+    --cream: 46 89% 95%;
+    --dark-teal: 195 16% 13%;
+    --dark-card: 195 24% 9%;
+    --darker-teal: 195 20% 11%;
+
+    /* Interactive elements */
+    --cursor-size: 40px;
+    --dot-color: 77 68% 77%;
+    --dot-size: 2px;
+    --dot-spacing: 30px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +114,32 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    cursor: none;
+  }
+
+  /* Custom animations */
+  .dot-grid-animate {
+    animation: dotPulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes dotPulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.8; }
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px hsl(var(--primary) / 0.3);
   }
 }

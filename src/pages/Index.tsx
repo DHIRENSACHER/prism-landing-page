@@ -1,12 +1,163 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Search, BookOpen, TrendingUp, ArrowRight, Zap, Brain, Target } from "lucide-react";
+import Header from "@/components/Header";
+import FeatureCard from "@/components/FeatureCard";
+import DotGrid from "@/components/DotGrid";
+import TargetCursor from "@/components/TargetCursor";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Interactive Background */}
+      <DotGrid />
+      
+      {/* Custom Cursor */}
+      <TargetCursor />
+      
+      {/* Header */}
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="relative z-10 px-6 py-20 md:py-32">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-8">
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm bg-primary/10 text-primary border border-primary/20 mb-8">
+              <Zap className="w-4 h-4 mr-2" />
+              AI-Powered Research Platform
+            </span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            Revolutionize Your{" "}
+            <span className="hero-gradient">Research</span>
+            <br />
+            Journey
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            Harness the power of artificial intelligence to discover, analyze, and synthesize 
+            academic literature like never before. From smart search to trending analysis.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl group"
+            >
+              Start Researching
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-border hover:bg-secondary px-8 py-6 text-lg rounded-xl"
+            >
+              Watch Demo
+            </Button>
+          </div>
+          
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center space-x-2">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                <Target className="w-4 h-4 text-primary" />
+              </div>
+              <span className="text-muted-foreground">99.9% Accuracy</span>
+            </div>
+            <div className="flex items-center justify-center space-x-2">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                <Brain className="w-4 h-4 text-primary" />
+              </div>
+              <span className="text-muted-foreground">AI-Enhanced</span>
+            </div>
+            <div className="flex items-center justify-center space-x-2">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                <Zap className="w-4 h-4 text-primary" />
+              </div>
+              <span className="text-muted-foreground">Lightning Fast</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Features Section */}
+      <section id="features" className="relative z-10 px-6 py-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              Powerful AI Features
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Advanced tools designed to accelerate your research and unlock new insights 
+              from academic literature.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <FeatureCard
+              icon={Search}
+              title="Smart Search"
+              description="AI-powered semantic search that understands context and intent, finding relevant papers even when keywords don't match exactly."
+              gradient="bg-gradient-to-br from-blue-500/20 to-cyan-500/20"
+            />
+            <FeatureCard
+              icon={BookOpen}
+              title="Journal Suggestions"
+              description="Intelligent recommendations for relevant journals and publications based on your research area and current trends in your field."
+              gradient="bg-gradient-to-br from-green-500/20 to-emerald-500/20"
+            />
+            <FeatureCard
+              icon={TrendingUp}
+              title="Trending Analysis"
+              description="Real-time analysis of emerging research trends, hot topics, and breakthrough discoveries in your domain of interest."
+              gradient="bg-gradient-to-br from-purple-500/20 to-pink-500/20"
+            />
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section */}
+      <section className="relative z-10 px-6 py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-12">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Ready to Transform Your Research?
+            </h3>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Join thousands of researchers who are already using AI to accelerate their discoveries.
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-6 text-lg rounded-xl"
+            >
+              Get Started Today
+            </Button>
+          </div>
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <footer className="relative z-10 px-6 py-12 border-t border-border/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-lg">R</span>
+              </div>
+              <span className="text-xl font-bold text-foreground">ResearchAI</span>
+            </div>
+            
+            <div className="flex space-x-8 text-muted-foreground">
+              <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
+              <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+              <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+            </div>
+          </div>
+          
+          <div className="mt-8 pt-8 border-t border-border/50 text-center text-muted-foreground">
+            <p>&copy; 2024 ResearchAI. Empowering the future of academic research.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
