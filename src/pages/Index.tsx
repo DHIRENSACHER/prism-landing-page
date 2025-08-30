@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Search, BookOpen, TrendingUp, ArrowRight, Zap, Brain, Target } from "lucide-react";
-import Header from "@/components/Header";
 import FeatureCard from "@/components/FeatureCard";
 import DotGrid from "@/components/DotGrid";
 import TargetCursor from "@/components/TargetCursor";
@@ -14,11 +13,8 @@ const Index = () => {
       {/* Custom Cursor */}
       <TargetCursor />
       
-      {/* Header */}
-      <Header />
-      
       {/* Hero Section */}
-      <section className="relative z-10 px-6 py-20 md:py-32">
+      <section className="relative z-10 px-6 py-32 md:py-40">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
             <span className="inline-flex items-center px-4 py-2 rounded-full text-sm bg-primary/10 text-primary border border-primary/20 mb-8">
