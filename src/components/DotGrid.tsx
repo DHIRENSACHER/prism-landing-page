@@ -48,8 +48,8 @@ const DotGrid = () => {
           originalY: y,
           vx: 0,
           vy: 0,
-          opacity: 0.3,
-          size: 2,
+          opacity: 0.4,
+          size: 4,
         });
       }
     }
@@ -117,8 +117,8 @@ const DotGrid = () => {
         dot.vy *= 0.9;
 
         // Reset opacity and size
-        dot.opacity = Math.max(0.1, dot.opacity - 0.01);
-        dot.size = Math.max(1, dot.size - 0.02);
+        dot.opacity = Math.max(0.2, dot.opacity - 0.01);
+        dot.size = Math.max(3, dot.size - 0.02);
 
         // Draw dot
         ctx.beginPath();
